@@ -1,0 +1,16 @@
+/* Tema terang */
+body.light {
+  background-color: white;
+  color: black;
+}
+
+/* Tema gelap */
+body.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Style dropdown */
+.container {
+  margin: 20px;
+}

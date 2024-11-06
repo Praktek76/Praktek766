@@ -1,0 +1,37 @@
+.latar{
+    background-color: gray;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.text-warna{
+    color: black;
+}
+.jarak-atas{
+    padding-top: 20px;
+}
+.jarak-bawah{
+    padding-bottom: 20px;
+}
+.ukuran-100px{
+    height: 100px;
+}
+.latar-hitam{
+    color: white;
+    background-color: black;
+}
+.latar-putih{
+    color: black;
+    background-color: white;
+}
+.latar-hitam:hover{
+    color: black;
+    background-color: white;
+}
+.latar-putih:hover{
+    color: white;
+    background-color: black;
+}
+.jarak-kanan{
+    margin: 20px;
+}

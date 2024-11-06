@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asal usul terapi</title>
+  <link rel="stylesheet" href="bootstrap.min.css" />
+  <style>
+    /* Tema terang */
+    body.light {
+      background-color: white;
+      color: black;
+    }
+
+    .navbar.light, .accordion-item.light, .accordion-button.light, .accordion-body.light, .dropdown-menu.light, .btn.btn-light {
+      background-color: white;
+      color: black;
+    }
+
+    /* Tema gelap */
+    body.dark {
+      background-color: #121212;
+      color: white;
+    }
+
+    .navbar.dark, .accordion-item.dark, .accordion-button.dark, .accordion-body.dark, .dropdown-menu.dark, .btn.btn-dark {
+      background-color: #333;
+      color: white;
+    }
+
+    .accordion-body.dark {
+      background-color: #444;
+      color: white;
+    }
+
+    /* Hover efek untuk mode gelap */
+    .dropdown-item.dark:hover, .accordion-button.dark:hover {
+      background-color: #555;
+      color: white;
+    }
+  </style>
+</head>
+<body class="container light">
+  <nav class="navbar navbar-expand-lg light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Halaman-utama-light.html">Halaman utama</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="Manfaat-terapi-light.html">Manfaat terapi</a></li>
+          <li class="nav-item"><a class="nav-link" href="cara-kerja-terapi-light.html">Cara kerja terapi</a></li>
+          <li class="nav-item"><a class="nav-link" href="Asal-usul-terapi-light.html">Asal usul terapi</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dropdown float-end mt-3">
+    <label for="theme-select" class="me-2">Pilih Mode Warna:</label>
+    <select id="theme-select" class="btn btn-primary">
+      <option class="dropdown-item light" value="light">Terang</option>
+      <option class="dropdown-item dark" value="dark">Gelap</option>
+    </select>
+  </div>
+
+  <div class="accordion mt-5 shadow-lg p-3 mb-5 rounded" id="accordionExample">
+    <div class="accordion-item light">
+      <h2 class="accordion-header">
+        <button class="accordion-button light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Asal usul akupuntur
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+        <div class="accordion-body light">
+          Asal usul akupunktur berasal dari Tiongkok kuno dan dapat ditelusuri...
+        </div>
+      </div>
+    </div>
+    <!-- Tambahkan elemen accordion lainnya sesuai kebutuhan -->
+  </div>
+
+  <p class="mt-5 mb-3 text-center">&copy; 31-10-2024</p>
+
+  <script>
+    // Mengambil elemen dropdown untuk memilih tema
+    const themeSelect = document.getElementById("theme-select");
+
+    // Fungsi untuk menerapkan tema ke semua elemen yang perlu diubah
+    function applyTheme(theme) {
+      document.body.className = theme;
+      document.querySelector('.navbar').className = `navbar navbar-expand-lg ${theme}`;
+      document.querySelectorAll('.accordion-item').forEach(item => item.className = `accordion-item ${theme}`);
+      document.querySelectorAll('.accordion-button').forEach(button => button.className = `accordion-button ${theme}`);
+      document.querySelectorAll('.accordion-body').forEach(body => body.className = `accordion-body ${theme}`);
+      themeSelect.className = `btn btn-primary ${theme}`;
+    }
+
+    // Cek tema yang tersimpan di localStorage dan terapkan saat halaman dimuat
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme") || "light";
+      applyTheme(savedTheme);
+      themeSelect.value = savedTheme;
+    });
+
+    // Simpan tema pilihan pengguna dan terapkan
+    themeSelect.addEventListener("change", (event) => {
+      const selectedTheme = event.target.value;
+      localStorage.setItem("theme", selectedTheme);
+      applyTheme(selectedTheme);
+    });
+  </script>
+
+  <script src="bootstrap.bundle.min.js"></script>
+</body>
+</html>
